@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 body {
     background-color: rgba(72, 163, 0, 0.07);
     font-family: 'Poppins', sans-serif;
@@ -50,11 +54,21 @@ main {
     display: flex;
     align-items: center;
     padding-left: 20px;
+    
 }
 .error-label {
-    font-size: 14px;
+    font-size: 12px;
     color: red;
-}
+    margin-top: 4px;
+    display: none;
+    }
+
+
+.show-error .error-label {
+    display: block;
+    }
+
+    
 .goal-container {
     border: 1px solid rgb(251, 254, 251);
     border-radius: 17px;
@@ -64,19 +78,27 @@ main {
     padding: 0 16px;
     background-color: white;
     margin-bottom: 32px;
+    margin-top: 32px;
 }
 .custum-checkbox {
     height: 24px;
     width: 24px;
-    border: 1px solid rgb(89, 91, 89);
+    border: 2px solid rgba(72, 163, 0, 1);
+    
     border-radius: 50%;
     cursor: pointer;
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    margin: 5px;
 }
-
+.check-icon {
+    display: none;
+}
 .goal-input {
     font-family: inherit;
     font-size: 16px;
+    font-weight: 500;
     border: none;
     outline: none;
     background-color: rgb(255, 255, 255);
@@ -99,6 +121,18 @@ main {
     text-align: center;
     color: #c4c4c4;
     margin-top: 24px;
+}
+.completed .custum-checkbox {
+    background-color: rgba(72, 163, 0, 1);
+    border-color: rgba(72, 163, 0, 1);
+
+}
+.completed .check-icon {
+    display: block;
+}
+.completed .goal-input{
+    text-decoration: line-through;
+    color: #028128;
 }
 
 @media (max-width: 768px) {
